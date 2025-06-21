@@ -40,23 +40,21 @@ async def on_message(msg: ChatMessage):
     username = msg.user.display_name
 
     if msg.text == '!join':
-        CHESS_GAME.join_game(msg.user.display_name)
+        CHESS_GAME.join_game(username)
 
     if msg.text == '!leave':
-        CHESS_GAME.leave_game(msg.user.display_name)
+        CHESS_GAME.leave_game(username)
 
     if msg.text == '!start':
-        CHESS_GAME.start_game(msg.user.display_name)
+        CHESS_GAME.start_game(username)
     
     if msg.text.startswith('!move'):
         parts = msg.text.split(' ')
-        CHESS_GAME.piece_move(msg.user.display_name, parts[1])
+        CHESS_GAME.piece_move(username, parts[1])
 
     if msg.text == '!forfeit':
-        CHESS_GAME.forfeit_game(msg.user.display_name)
-            
-    if msg.text == '!switch':
-        CHESS_GAME.switch_scenes()
+        CHESS_GAME.forfeit_game(username)
+        
 
 
     
