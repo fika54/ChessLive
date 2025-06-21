@@ -1,0 +1,5 @@
+installs:
+python-chess
+tiktoklive
+obsws
+pygame
